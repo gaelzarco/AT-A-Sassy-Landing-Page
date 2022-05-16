@@ -1,3 +1,4 @@
+@import 'partials/_normalize.scss';
 
 * {
   box-sizing: border-box;
@@ -6,7 +7,7 @@
 }
 
 body {
-  background-color: $light-color;
+  background-color: $primary-color;
   font-family: $font-stack;
   line-height: 1;
 }
@@ -15,19 +16,45 @@ img {
   border-radius: 50%;
 }
 
-a {
-  text-decoration: none;
-}
-
 .hero {
-  // This is where the bulk of the SCSS styling needs to be done
+  @include set-bg($primary-color);
 
-  // Take a look at the other files we've built already. How can they be useful here?
+  h1 {
+    font-size: 25px;
+    line-height: 1.2;
+  }
 
-  // Also, take time to review the features of SCSS we've already covered:
-  // 1. $variables
-  // 2. nesting (dont forget about the ampersand (&) parent selector!)
-  // 3. At-Rules
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    padding-inline: 10px;
+  }
+
+  img {
+    width: 50%;
+  }
+
+  a {
+    text-decoration: none;
+    color: text-color-picker($primary-color)
+  }
+  
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
 }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
